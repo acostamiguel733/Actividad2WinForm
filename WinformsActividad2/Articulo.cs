@@ -12,7 +12,9 @@ namespace WinformsActividad2
         public string Nombre { get; set; }  
         public string Descripcion { get; set; } 
         public string Marca { get; set; }   
-        public string Categoria { get; set; }   
+        public string Categoria { get; set; }  
+        
+        // averiguar poner atributo Imagen
         public float Precio { get; set; }   
         public bool Estado { get; set; }    
 
