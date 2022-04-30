@@ -20,13 +20,20 @@ namespace WinformsActividad2
         private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+          
+
+        }
+
+        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
             foreach (var item in Application.OpenForms)
             {
-                if (item.GetType() == typeof(frmAgregar))
+                if (item.GetType() == typeof(frmConsultas))
                     return;
             }
-            
-            frmAgregar ventana = new frmAgregar();
+
+            frmConsultas ventana = new frmConsultas();
             ventana.MdiParent = this;
             ventana.Show();
         }

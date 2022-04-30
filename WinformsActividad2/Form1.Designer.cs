@@ -1,6 +1,6 @@
 ﻿namespace WinformsActividad2
 {
-    partial class frmAgregar
+    partial class frmConsultas
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,21 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvArticulos1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos1)).BeginInit();
             this.SuspendLayout();
             // 
-            // frmAgregar
+            // dgvArticulos1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmAgregar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.dgvArticulos1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos1.Location = new System.Drawing.Point(61, 65);
+            this.dgvArticulos1.Name = "dgvArticulos1";
+            this.dgvArticulos1.Size = new System.Drawing.Size(855, 328);
+            this.dgvArticulos1.TabIndex = 0;
+            // 
+            // frmConsultas
+            // 
+            this.ClientSize = new System.Drawing.Size(959, 451);
+            this.Controls.Add(this.dgvArticulos1);
+            this.Name = "frmConsultas";
+            this.Load += new System.EventHandler(this.frmConsultas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.PictureBox pbListar;
+        private System.Windows.Forms.DataGridView dgvArticulos;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvArticulos1;
     }
 }
 

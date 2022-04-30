@@ -11,34 +11,73 @@ namespace negocio
 {
     public  class ArticuloNegocio
     {
-        public List<Articulo> Listar()
+        //public List<Articulo> Listar()
+        //{
+        //    List <Articulo> list = new List<Articulo>();
+        //    SqlConnection conexion = new SqlConnection();
+        //    SqlCommand comando = new SqlCommand();
+        //    SqlDataReader lector;
+        //     
+        //    try
+        //    {
+        //        conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true" ;
+        //        comando.CommandType = System.Data.CommandType.Text ;
+        //        comando.CommandText = "select a.Nombre , a.Codigo, m.Descripcion as 'Marca', a.Descripcion, c.Descripcion as 'Categoria', precio from articulos a inner join categorias c on a.IdCategoria = c.Id inner join marcas m on a.IdMarca = m.Id";
+        //        comando.Connection = conexion ;
+        //        conexion.Open();
+        //        lector = comando.ExecuteReader();
+        //
+        //        while (lector.Read())
+        //        {
+        //            Articulo aux = new Articulo();
+        //            aux.Nombre = (string)lector["Nombre"];
+        //            aux.CodArt = (string)lector["Codigo"];
+        //            aux.Marca = (string)lector["Marca"];
+        //            aux.Descripcion = (string)lector["Descripcion"];
+        //            aux.Categoria = (string)lector["Categoria"];
+        //            aux.Precio = (float)lector["Precio"];
+        //            list.Add(aux);
+        //        }
+        //           return list;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //           conexion.Close();
+        //
+        //    }
+        //
+        //}
+        //
+
+
+        public List <Articulo> Listar()
         {
-            List <Articulo> list = new List<Articulo>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
-             
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+
+
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; datebase=CATALOGO_DB; integrated security=true" ;
-                comando.CommandType = System.Data.CommandType.Text ;
-                comando.CommandText = "select a.Nombre , a.Codigo, m.Descripcion as 'Marca', a.Descripcion, c.Descripcion as 'Categoria', precio from articulos a inner join categorias c on a.IdCategoria = c.Id inner join marcas m on a.IdMarca = m.Id";
-                comando.Connection = conexion ;
-                conexion.Open();
-                lector = comando.ExecuteReader();
+                datos.setearConsulta("SELECT Nombre, Codigo FROM ARTICULOS");
+                datos.ejecutarLectura();
 
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
+
                     Articulo aux = new Articulo();
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.CodArt = (string)lector["Codigo"];
-                    aux.Marca = (string)lector["Marca"];
-                    aux.Descripcion = (string)lector["Descripcion"];
-                    aux.Categoria = (string)lector["Categoria"];
-                    aux.Precio = (float)lector["Precio"];
-                    list.Add(aux);
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.CodArt = (string)datos.Lector["Codigo"];
+
+                    lista.Add(aux);
+
+
                 }
-                   return list;
+                return lista;
             }
             catch (Exception ex)
             {
@@ -47,11 +86,17 @@ namespace negocio
             }
             finally
             {
-                   conexion.Close();
-
-            }
-
+                datos.cerrarConexion();
+            
+            }      
         }
+
+
+
+
+
+
+
 
     }
 }
