@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dominio;
 using System.Data.SqlClient;
-
+using System.Text.RegularExpressions;
 
 namespace negocio
 {
@@ -63,7 +63,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT Nombre, Codigo FROM ARTICULOS");
+                datos.setearConsulta("SELECT Nombre, Codigo,Precio, ImagenUrl,m.Descripcion Marca FROM ARTICULOS a,MARCAS m WHERE m.Id = a.IdMarca");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -72,6 +72,11 @@ namespace negocio
                     Articulo aux = new Articulo();
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.CodArt = (string)datos.Lector["Codigo"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.Brand = new Marca();
+                    aux.Brand.Descripcion = (string)datos.Lector["Marca"];
+
 
                     lista.Add(aux);
 
