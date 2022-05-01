@@ -48,14 +48,13 @@ namespace negocio
         {
             comando.Parameters.AddWithValue(nombre, valor);
         }
-
         public void ejecutarAccion()
         {
             comando.Connection = conexion;
             try
             {
                 conexion.Open();
-                comando.ExecuteNonQueryAsync();
+                comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
