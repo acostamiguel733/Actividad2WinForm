@@ -96,6 +96,23 @@ namespace negocio
             }      
         }
 
+        public void agregar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("insert into Articulo (@Codigo,@Nombre,@Decripcion,@IdMarca,@IdCategoria,@ImagenUrl,@Precio)");
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
 
 
