@@ -19,7 +19,8 @@ namespace WinformsActividad2
 
         private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmAgregar alta = new frmAgregar();
+            alta.ShowDialog();
           
 
         }

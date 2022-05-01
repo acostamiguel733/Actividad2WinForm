@@ -16,6 +16,7 @@ namespace dominio
         public bool Estado { get; set; } 
         public string ImagenUrl { get; set; }
         public Marca Brand { get; set; }
+         public Categoria Cate { get; set; }    
 
 
     }
