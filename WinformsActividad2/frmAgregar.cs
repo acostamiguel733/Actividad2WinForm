@@ -59,5 +59,25 @@ namespace WinformsActividad2
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void frmAgregar_Load(object sender, EventArgs e)
+        {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
+            try
+            {
+                cbxMarca.DataSource = marcaNegocio.Listar();
+                cbxCategoria.DataSource = categoriaNegocio.Listar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+
+        }
     }
 }

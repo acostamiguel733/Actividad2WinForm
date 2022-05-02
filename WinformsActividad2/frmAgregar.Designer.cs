@@ -198,6 +198,7 @@
             this.Name = "frmAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregar";
+            this.Load += new System.EventHandler(this.frmAgregar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
