@@ -102,13 +102,13 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("insert into Articulos Codigo,Nombre) VALUES (@Codigo,@Nombre)");
+                datos.setearConsulta("insert into Articulos (Codigo,Nombre,Descripcion,Precio) VALUES (@Codigo,@Nombre,@Descripcion,@Precio)");
                 datos.setearParametros("@Codigo", nuevo.CodArt);
                 datos.setearParametros("@Nombre", nuevo.Nombre);
-                //datos.setearParametros("@Descripcion",nuevo.Descripcion);
+                datos.setearParametros("@Descripcion",nuevo.Descripcion);
                 //datos.setearParametros("@Marca", nuevo.Brand);
                 //datos.setearParametros("Categoria", nuevo.Cate);
-                //datos.setearParametros("@Precio", nuevo.Precio);
+                datos.setearParametros("@Precio", nuevo.Precio);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
