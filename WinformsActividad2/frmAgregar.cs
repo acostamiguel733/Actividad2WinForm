@@ -46,8 +46,8 @@ namespace WinformsActividad2
                 nuevo.CodArt = textCodigo.Text;
                 nuevo.Nombre = textNombre.Text;
                 nuevo.Descripcion = textDescripcion.Text;
-                //nuevo.Brand = (Marca)cbxMarca.SelectedItem;
-                //nuevo.Cate = (Categoria)cbxCategoria.SelectedItem;
+                nuevo.Brand = (Marca)cbxMarca.SelectedItem;
+                nuevo.Cate = (Categoria)cbxCategoria.SelectedItem;
                 nuevo.Precio = decimal.Parse(textPrecio.Text);
                 negocio.agregar(nuevo);
                 MessageBox.Show("Agregado exitosamente");
