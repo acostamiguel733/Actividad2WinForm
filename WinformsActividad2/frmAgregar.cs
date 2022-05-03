@@ -38,7 +38,7 @@ namespace WinformsActividad2
         {
             Articulo nuevo = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
-           
+            
  
             try
             {
@@ -46,8 +46,9 @@ namespace WinformsActividad2
                 nuevo.CodArt = textCodigo.Text;
                 nuevo.Nombre = textNombre.Text;
                 nuevo.Descripcion = textDescripcion.Text;
-                //nuevo.Brand = (Marca)cbxMarca.SelectedItem;
-                //nuevo.Cate = (Categoria)cbxCategoria.SelectedItem;
+                nuevo.ImagenUrl = cbxUrlImagen.Text;
+                nuevo.Brand = (Marca)cbxMarca.SelectedItem; 
+                nuevo.Cate = (Categoria)cbxCategoria.SelectedItem;
                 nuevo.Precio = decimal.Parse(textPrecio.Text);
                 negocio.agregar(nuevo);
                 MessageBox.Show("Agregado exitosamente");
@@ -79,5 +80,26 @@ namespace WinformsActividad2
 
 
         }
+
+        private void cbxUrlImagen_Leave(object sender, EventArgs e)
+        {
+
+            cargarImagen(cbxUrlImagen.Text);                  
+
+
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pbxArticulo.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
+            }
+        }
+
     }
 }
