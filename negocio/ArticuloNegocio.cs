@@ -63,7 +63,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT Nombre, Codigo,Precio, ImagenUrl,m.Descripcion Marca FROM ARTICULOS a,MARCAS m WHERE m.Id = a.IdMarca");
+                datos.setearConsulta("SELECT Nombre, Codigo,Precio, ImagenUrl,m.Descripcion Marca , c.Descripcion Categoria FROM ARTICULOS a, MARCAS m, CATEGORIAS c WHERE m.Id = a.IdMarca and c.Id = a.IdCategoria");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -73,9 +73,12 @@ namespace negocio
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.CodArt = (string)datos.Lector["Codigo"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    if(!(datos.Lector["ImagenUrl"] is DBNull))
+                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.Brand = new Marca();
                     aux.Brand.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Cate = new Categoria();
+                    aux.Cate.Descripcion = (string)datos.Lector["Categoria"];
 
 
                     lista.Add(aux);
@@ -102,12 +105,12 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("insert into Articulos (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,Precio,ImagenUrl) VALUES (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@Precio,@ImagenUrl)");
+                datos.setearConsulta("insert into Articulos (Codigo,Nombre,Descripcion,Precio) VALUES (@Codigo,@Nombre,@Descripcion,@Precio)");
                 datos.setearParametros("@Codigo", nuevo.CodArt);
                 datos.setearParametros("@Nombre", nuevo.Nombre);
                 datos.setearParametros("@Descripcion",nuevo.Descripcion);
                 datos.setearParametros("@IdMarca", nuevo.Brand.id);
-                datos.setearParametros("@IdCategoria", nuevo.Cate.id);      
+                datos.setearParametros("@IdCategoria", nuevo.Cate.id);
                 datos.setearParametros("@Precio", nuevo.Precio);
                 datos.setearParametros("@ImagenUrl", nuevo.ImagenUrl);
                 datos.ejecutarAccion();

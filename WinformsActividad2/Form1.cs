@@ -22,12 +22,20 @@ namespace WinformsActividad2
         {
 
             ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.Listar();
-            dgvArticulos1.DataSource = listaArticulos;
-            dgvArticulos1.Columns["ImagenUrl"].Visible = false;
-            dgvArticulos1.Columns["Descripcion"].Visible = false;
-            dgvArticulos1.Columns["Estado"].Visible = false;
-            cargarImagen(listaArticulos[0].ImagenUrl);
+            try
+            {
+                listaArticulos = negocio.Listar();
+                dgvArticulos1.DataSource = listaArticulos;
+                dgvArticulos1.Columns["ImagenUrl"].Visible = false;
+                dgvArticulos1.Columns["Descripcion"].Visible = false;
+                dgvArticulos1.Columns["Estado"].Visible = false;
+                cargarImagen(listaArticulos[0].ImagenUrl);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
 
                 
         }
