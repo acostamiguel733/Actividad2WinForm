@@ -1,6 +1,6 @@
 ﻿namespace WinformsActividad2
 {
-    partial class frmConsultas
+    partial class frmModificar
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,6 +30,7 @@
         {
             this.dgvArticulos1 = new System.Windows.Forms.DataGridView();
             this.pbArticulos = new System.Windows.Forms.PictureBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulos)).BeginInit();
             this.SuspendLayout();
@@ -55,12 +56,23 @@
             this.pbArticulos.TabIndex = 1;
             this.pbArticulos.TabStop = false;
             // 
-            // frmConsultas
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(378, 407);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(115, 27);
+            this.btnModificar.TabIndex = 2;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // frmModificar
             // 
             this.ClientSize = new System.Drawing.Size(966, 484);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.pbArticulos);
             this.Controls.Add(this.dgvArticulos1);
-            this.Name = "frmConsultas";
+            this.Name = "frmModificar";
             this.Load += new System.EventHandler(this.frmConsultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulos)).EndInit();
@@ -76,6 +88,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dgvArticulos1;
         private System.Windows.Forms.PictureBox pbArticulos;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 

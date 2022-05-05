@@ -27,16 +27,25 @@ namespace WinformsActividad2
 
         private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void administrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
             foreach (var item in Application.OpenForms)
             {
-                if (item.GetType() == typeof(frmConsultas))
+                if (item.GetType() == typeof(frmModificar))
                     return;
             }
 
-            frmConsultas ventana = new frmConsultas();
+            frmModificar ventana = new frmModificar();
             ventana.MdiParent = this;
             ventana.Show();
+
+
+
+
         }
     }
 }

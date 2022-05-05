@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace WinformsActividad2
 {
-    public partial class frmConsultas : Form
+    public partial class frmModificar : Form
     {
         
         private List<Articulo> listaArticulos;
 
-        public frmConsultas()
+        public frmModificar()
         {
 
             InitializeComponent();
@@ -60,7 +60,17 @@ namespace WinformsActividad2
             }
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
 
+            Articulo seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
+
+            frmAgregar modificar = new frmAgregar(seleccionado);
+            modificar.ShowDialog();
+
+
+
+        }
     }
 
 }

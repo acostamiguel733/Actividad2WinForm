@@ -14,9 +14,17 @@ namespace WinformsActividad2
 {
     public partial class frmAgregar : Form
     {
+        private Articulo art = null;
         public frmAgregar()
         {
             InitializeComponent();
+        }
+        public frmAgregar(Articulo art)
+        {
+            InitializeComponent();
+            this.art = art;
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -70,7 +78,23 @@ namespace WinformsActividad2
             try
             {
                 cbxMarca.DataSource = marcaNegocio.Listar();
+                cbxMarca.ValueMember = "Id";
+                cbxMarca.DisplayMember = "Descripcion";
                 cbxCategoria.DataSource = categoriaNegocio.Listar();
+                cbxCategoria.ValueMember = "Id";
+                cbxCategoria.DisplayMember = "Descripcion";
+
+                if ( art != null)
+                {
+                    textCodigo.Text = art.CodArt;
+                    textNombre.Text = art.Nombre;
+                    textDescripcion.Text = art.Descripcion;
+                    cbxUrlImagen.Text = art.ImagenUrl;
+                    cargarImagen(art.ImagenUrl);
+                    textPrecio.Text = art.Precio.ToString();
+
+                
+                }
 
             }
             catch (Exception ex)

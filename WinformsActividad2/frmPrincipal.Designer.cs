@@ -59,6 +59,7 @@
             this.administrarProductosToolStripMenuItem.Name = "administrarProductosToolStripMenuItem";
             this.administrarProductosToolStripMenuItem.Size = new System.Drawing.Size(138, 20);
             this.administrarProductosToolStripMenuItem.Text = "Administrar Productos";
+            this.administrarProductosToolStripMenuItem.Click += new System.EventHandler(this.administrarProductosToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 

@@ -63,7 +63,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT Nombre, Codigo,Precio, ImagenUrl,m.Descripcion Marca , c.Descripcion Categoria FROM ARTICULOS a, MARCAS m, CATEGORIAS c WHERE m.Id = a.IdMarca and c.Id = a.IdCategoria");
+                datos.setearConsulta("SELECT Nombre, Codigo,a.Descripcion,Precio, ImagenUrl,m.Descripcion Marca , c.Descripcion Categoria FROM ARTICULOS a, MARCAS m, CATEGORIAS c WHERE m.Id = a.IdMarca and c.Id = a.IdCategoria");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -73,6 +73,7 @@ namespace negocio
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.CodArt = (string)datos.Lector["Codigo"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
                     if(!(datos.Lector["ImagenUrl"] is DBNull))
                         aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.Brand = new Marca();
