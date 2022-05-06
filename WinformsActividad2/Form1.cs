@@ -74,6 +74,23 @@ namespace WinformsActividad2
 
 
         }
+
+        private void btnEliminarFisico_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio articulo = new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
+                articulo.Eliminar(seleccionado.Id);
+                   
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 
 }
