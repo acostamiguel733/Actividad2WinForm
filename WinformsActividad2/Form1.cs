@@ -48,6 +48,21 @@ namespace WinformsActividad2
             cargarImagen(selec.ImagenUrl);
 
         }
+        private void cargar()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                listaArticulos = negocio.Listar();
+                dgvArticulos1.DataSource = listaArticulos;
+                dgvArticulos1.Columns["ImagenUrl"].Visible = false;                
+                cargarImagen(listaArticulos[0].ImagenUrl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         private void cargarImagen(string imagen)         
         {
@@ -71,6 +86,8 @@ namespace WinformsActividad2
 
             modificar.ShowDialog();
 
+            cargar();
+
 
 
         }
@@ -83,6 +100,7 @@ namespace WinformsActividad2
             {
                 seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
                 articulo.Eliminar(seleccionado.Id);
+                cargar();
                    
             }
             catch (Exception ex)
