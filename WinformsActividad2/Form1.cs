@@ -98,10 +98,14 @@ namespace WinformsActividad2
             Articulo seleccionado;
             try
             {
-                seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
-                articulo.Eliminar(seleccionado.Id);
-                cargar();
-                   
+                DialogResult respuesta = MessageBox.Show("¿Está seguro que desea eliminar el registro?","Eliminar registro",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if (respuesta == DialogResult.Yes)
+                {   
+                    seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
+                    articulo.Eliminar(seleccionado.Id);
+                    cargar();
+                }
+
             }
             catch (Exception ex)
             {
