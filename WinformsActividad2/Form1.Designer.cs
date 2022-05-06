@@ -32,6 +32,8 @@
             this.pbArticulos = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminarFisico = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulos)).BeginInit();
             this.SuspendLayout();
@@ -77,9 +79,28 @@
             this.btnEliminarFisico.UseVisualStyleBackColor = true;
             this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
             // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(268, 28);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(29, 13);
+            this.lblFiltro.TabIndex = 4;
+            this.lblFiltro.Text = "Filtro";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(303, 21);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(245, 20);
+            this.txtFiltro.TabIndex = 5;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            // 
             // frmModificar
             // 
             this.ClientSize = new System.Drawing.Size(966, 484);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnEliminarFisico);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.pbArticulos);
@@ -90,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -103,6 +125,8 @@
         private System.Windows.Forms.PictureBox pbArticulos;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminarFisico;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtFiltro;
     }
 }
 

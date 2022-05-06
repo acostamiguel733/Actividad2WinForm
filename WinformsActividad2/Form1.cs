@@ -21,22 +21,7 @@ namespace WinformsActividad2
         private void frmConsultas_Load(object sender, EventArgs e)
         {
 
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            try
-            {
-                listaArticulos = negocio.Listar();
-                dgvArticulos1.DataSource = listaArticulos;
-                //dgvArticulos1.Columns["Id"].Visible = false;
-                dgvArticulos1.Columns["ImagenUrl"].Visible = false;
-                dgvArticulos1.Columns["Descripcion"].Visible = false;
-                dgvArticulos1.Columns["Estado"].Visible = false;
-                cargarImagen(listaArticulos[0].ImagenUrl);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
-            }
+            cargar();
 
                 
         }
@@ -55,13 +40,23 @@ namespace WinformsActividad2
             {
                 listaArticulos = negocio.Listar();
                 dgvArticulos1.DataSource = listaArticulos;
-                dgvArticulos1.Columns["ImagenUrl"].Visible = false;                
+                //dgvArticulos1.Columns["Id"].Visible = false;
+                dgvArticulos1.Columns["ImagenUrl"].Visible = false;
+                dgvArticulos1.Columns["Descripcion"].Visible = false;
+                dgvArticulos1.Columns["Estado"].Visible = false;
                 cargarImagen(listaArticulos[0].ImagenUrl);
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(ex.ToString());
             }
+        }
+        private void ocultarColumnas()
+        {
+            dgvArticulos1.Columns["ImagenUrl"].Visible = false;
+            dgvArticulos1.Columns["Descripcion"].Visible = false;
+            dgvArticulos1.Columns["Estado"].Visible = false;
         }
 
         private void cargarImagen(string imagen)         
@@ -112,6 +107,24 @@ namespace WinformsActividad2
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> Listafiltrada;
+            string filtro = txtFiltro.Text;
+
+            if(filtro.Length >= 3)
+            { 
+            Listafiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Brand.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.CodArt.ToUpper().Contains(filtro.ToUpper()) || x.Cate.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                Listafiltrada = listaArticulos;
+            }
+            dgvArticulos1.DataSource = null;
+            dgvArticulos1.DataSource = Listafiltrada;
+            ocultarColumnas();
         }
     }
 
