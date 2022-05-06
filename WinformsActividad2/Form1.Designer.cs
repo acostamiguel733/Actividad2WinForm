@@ -39,19 +39,19 @@
             // 
             this.dgvArticulos1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvArticulos1.Location = new System.Drawing.Point(369, 53);
+            this.dgvArticulos1.Location = new System.Drawing.Point(271, 53);
             this.dgvArticulos1.MultiSelect = false;
             this.dgvArticulos1.Name = "dgvArticulos1";
             this.dgvArticulos1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos1.Size = new System.Drawing.Size(449, 326);
+            this.dgvArticulos1.Size = new System.Drawing.Size(665, 337);
             this.dgvArticulos1.TabIndex = 0;
             this.dgvArticulos1.SelectionChanged += new System.EventHandler(this.dgvArticulos1_SelectionChanged);
             // 
             // pbArticulos
             // 
-            this.pbArticulos.Location = new System.Drawing.Point(49, 67);
+            this.pbArticulos.Location = new System.Drawing.Point(12, 53);
             this.pbArticulos.Name = "pbArticulos";
-            this.pbArticulos.Size = new System.Drawing.Size(264, 246);
+            this.pbArticulos.Size = new System.Drawing.Size(216, 219);
             this.pbArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbArticulos.TabIndex = 1;
             this.pbArticulos.TabStop = false;
@@ -73,6 +73,7 @@
             this.Controls.Add(this.pbArticulos);
             this.Controls.Add(this.dgvArticulos1);
             this.Name = "frmModificar";
+            this.Text = "Administrar Articulos";
             this.Load += new System.EventHandler(this.frmConsultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulos)).EndInit();

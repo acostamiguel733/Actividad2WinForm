@@ -26,6 +26,7 @@ namespace WinformsActividad2
             {
                 listaArticulos = negocio.Listar();
                 dgvArticulos1.DataSource = listaArticulos;
+                //dgvArticulos1.Columns["Id"].Visible = false;
                 dgvArticulos1.Columns["ImagenUrl"].Visible = false;
                 dgvArticulos1.Columns["Descripcion"].Visible = false;
                 dgvArticulos1.Columns["Estado"].Visible = false;
@@ -42,8 +43,9 @@ namespace WinformsActividad2
 
         private void dgvArticulos1_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.ImagenUrl);
+
+            Articulo selec = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem; 
+            cargarImagen(selec.ImagenUrl);
 
         }
 
@@ -66,6 +68,7 @@ namespace WinformsActividad2
             Articulo seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
 
             frmAgregar modificar = new frmAgregar(seleccionado);
+
             modificar.ShowDialog();
 
 

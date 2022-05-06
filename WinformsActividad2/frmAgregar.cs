@@ -23,6 +23,7 @@ namespace WinformsActividad2
         {
             InitializeComponent();
             this.art = art;
+            Text = "Modificar Articulo";
 
 
         }
@@ -44,25 +45,37 @@ namespace WinformsActividad2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo nuevo = new Articulo();
+           
             ArticuloNegocio negocio = new ArticuloNegocio();
             
  
             try
             {
+                if (art == null)
+                    art = new Articulo();
 
-                nuevo.CodArt = textCodigo.Text;
-                nuevo.Nombre = textNombre.Text;
-                nuevo.Descripcion = textDescripcion.Text;
-                nuevo.ImagenUrl = cbxUrlImagen.Text;
-                nuevo.Brand = (Marca)cbxMarca.SelectedItem; 
-                nuevo.Brand = (Marca)cbxMarca.SelectedItem;
-                nuevo.Cate = (Categoria)cbxCategoria.SelectedItem;
-                nuevo.Precio = decimal.Parse(textPrecio.Text);
-                negocio.agregar(nuevo);
-                MessageBox.Show("Agregado exitosamente");
+                art.CodArt = textCodigo.Text;
+                art.Nombre = textNombre.Text;
+                art.Descripcion = textDescripcion.Text;
+                art.ImagenUrl = cbxUrlImagen.Text;
+                art.Brand = (Marca)cbxMarca.SelectedItem; 
+                art.Brand = (Marca)cbxMarca.SelectedItem;
+                art.Cate = (Categoria)cbxCategoria.SelectedItem;
+                art.Precio = decimal.Parse(textPrecio.Text);
+
+               if(art.Id != 0)
+                {
+                    negocio.modificar(art);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    negocio.agregar(art);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+
                 Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -92,7 +105,9 @@ namespace WinformsActividad2
                     cbxUrlImagen.Text = art.ImagenUrl;
                     cargarImagen(art.ImagenUrl);
                     textPrecio.Text = art.Precio.ToString();
-
+                    cbxMarca.SelectedValue = art.Brand.id;
+                    cbxCategoria.SelectedValue = art.Cate.id;
+                      
                 
                 }
 
