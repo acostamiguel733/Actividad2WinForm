@@ -42,7 +42,44 @@ namespace WinformsActividad2
         {
             this.Close();
         }
-
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+        private bool ValidarIngresoDeDatos()
+        {
+            if (string.IsNullOrEmpty(textCodigo.Text))
+            {
+                MessageBox.Show("Por favor completa el Codigo del Articulo.");
+                return true;
+            }
+            if (string.IsNullOrEmpty(textNombre.Text))
+            {
+                MessageBox.Show("Por favor completa el Nombre del Articulo.");
+                return true;
+            }
+            if (string.IsNullOrEmpty(textDescripcion.Text))
+            {
+                MessageBox.Show("Por favor completa la Descripcion del Articulo.");
+                return true;
+            }
+            if (string.IsNullOrEmpty(textPrecio.Text))
+            {
+                MessageBox.Show("Por favor completa el Precio del Articulo.");
+                return true;
+            }
+            if (!(soloNumeros(textPrecio.Text)))
+            {
+                MessageBox.Show("Por favor solo ingrese numeros para el  campo Precio");
+                return true;
+            }
+            return false;
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
            
@@ -53,6 +90,8 @@ namespace WinformsActividad2
             {
                 if (art == null)
                     art = new Articulo();
+                if (ValidarIngresoDeDatos())
+                    return;
 
                 art.CodArt = textCodigo.Text;
                 art.Nombre = textNombre.Text;
@@ -62,6 +101,7 @@ namespace WinformsActividad2
                 art.Brand = (Marca)cbxMarca.SelectedItem;
                 art.Cate = (Categoria)cbxCategoria.SelectedItem;
                 art.Precio = decimal.Parse(textPrecio.Text);
+
 
                if(art.Id != 0)
                 {

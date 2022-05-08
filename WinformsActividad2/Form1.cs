@@ -74,7 +74,9 @@ namespace WinformsActividad2
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            DataGridViewRow row = dgvArticulos1.CurrentRow;
+            if(row != null)
+            {
             Articulo seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
 
             frmAgregar modificar = new frmAgregar(seleccionado);
@@ -82,31 +84,32 @@ namespace WinformsActividad2
             modificar.ShowDialog();
 
             cargar();
-
-
-
+            }
         }
-
         private void btnEliminarFisico_Click(object sender, EventArgs e)
         {
-            ArticuloNegocio articulo = new ArticuloNegocio();
-            Articulo seleccionado;
-            try
+            DataGridViewRow row = dgvArticulos1.CurrentRow;
+            if( row != null) 
             {
-                DialogResult respuesta = MessageBox.Show("¿Está seguro que desea eliminar el registro?","Eliminar registro",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-                if (respuesta == DialogResult.Yes)
-                {   
-                    seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
-                    articulo.Eliminar(seleccionado.Id);
-                    cargar();
+                ArticuloNegocio articulo = new ArticuloNegocio();
+                Articulo seleccionado;
+                try
+                {
+                    DialogResult respuesta = MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Eliminar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
+                        articulo.Eliminar(seleccionado.Id);
+                        cargar();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
                 }
 
             }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
-            }
+            
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
