@@ -57,7 +57,6 @@
             this.lAgregar1.Size = new System.Drawing.Size(40, 13);
             this.lAgregar1.TabIndex = 0;
             this.lAgregar1.Text = "Codigo";
-            this.lAgregar1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lAgregar2
             // 
@@ -179,7 +178,6 @@
             this.lAgregarz.Size = new System.Drawing.Size(166, 20);
             this.lAgregarz.TabIndex = 14;
             this.lAgregarz.Text = "Agregue un articulo";
-            this.lAgregarz.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // lUrlImagen
             // 

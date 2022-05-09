@@ -32,7 +32,6 @@ namespace WinformsActividad2
         private void FrmDetalleArticulo_Load(object sender, EventArgs e)
         {
 
-
             try
             {
                 txtId.Text = art.Id.ToString();
@@ -52,10 +51,6 @@ namespace WinformsActividad2
 
                 MessageBox.Show(ex.ToString());
             }
-
-
-
-
         }
         private void cargarImagen(string imagen)
         {
@@ -69,9 +64,6 @@ namespace WinformsActividad2
                 pbxDetalle.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
             }
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

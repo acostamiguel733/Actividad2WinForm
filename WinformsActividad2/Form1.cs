@@ -40,7 +40,6 @@ namespace WinformsActividad2
             {
                 listaArticulos = negocio.Listar();
                 dgvArticulos1.DataSource = listaArticulos;
-                //dgvArticulos1.Columns["Id"].Visible = false;
                 dgvArticulos1.Columns["ImagenUrl"].Visible = false;
                 dgvArticulos1.Columns["Descripcion"].Visible = false;
                 dgvArticulos1.Columns["Estado"].Visible = false;

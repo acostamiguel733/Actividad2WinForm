@@ -22,12 +22,6 @@ namespace WinformsActividad2
             frmAgregar alta = new frmAgregar();
             alta.ShowDialog();
           
-
-        }
-
-        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void administrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,10 +36,6 @@ namespace WinformsActividad2
             frmModificar ventana = new frmModificar();
             ventana.MdiParent = this;
             ventana.Show();
-
-
-
-
         }
     }
 }

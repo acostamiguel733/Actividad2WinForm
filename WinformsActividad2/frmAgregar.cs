@@ -25,17 +25,6 @@ namespace WinformsActividad2
             this.art = art;
             Text = "Modificar Articulo";
 
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -156,8 +145,6 @@ namespace WinformsActividad2
             {
                 MessageBox.Show(ex.ToString());
             }
-
-
 
         }
 

@@ -47,7 +47,7 @@
             this.dgvArticulos1.MultiSelect = false;
             this.dgvArticulos1.Name = "dgvArticulos1";
             this.dgvArticulos1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos1.Size = new System.Drawing.Size(665, 337);
+            this.dgvArticulos1.Size = new System.Drawing.Size(633, 337);
             this.dgvArticulos1.TabIndex = 0;
             this.dgvArticulos1.SelectionChanged += new System.EventHandler(this.dgvArticulos1_SelectionChanged);
             // 
