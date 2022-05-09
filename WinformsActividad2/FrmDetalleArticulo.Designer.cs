@@ -33,22 +33,22 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxDetalle = new System.Windows.Forms.PictureBox();
             this.lblIdMarca = new System.Windows.Forms.Label();
             this.lblDescMarca = new System.Windows.Forms.Label();
             this.lblIdCat = new System.Windows.Forms.Label();
             this.lblDescCat = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.txtIdMarca = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtIdCat = new System.Windows.Forms.TextBox();
+            this.txtDescMarca = new System.Windows.Forms.TextBox();
+            this.txtDescCat = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -59,12 +59,11 @@
             this.lblTitulo.Size = new System.Drawing.Size(109, 13);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "DETALLE ARTCULO";
-            this.lblTitulo.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(54, 59);
+            this.lblId.Location = new System.Drawing.Point(49, 59);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 1;
@@ -97,14 +96,14 @@
             this.lblDesc.TabIndex = 4;
             this.lblDesc.Text = "Descripcion";
             // 
-            // pictureBox1
+            // pbxDetalle
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(317, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 202);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pbxDetalle.Location = new System.Drawing.Point(317, 53);
+            this.pbxDetalle.Name = "pbxDetalle";
+            this.pbxDetalle.Size = new System.Drawing.Size(203, 202);
+            this.pbxDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxDetalle.TabIndex = 5;
+            this.pbxDetalle.TabStop = false;
             // 
             // lblIdMarca
             // 
@@ -155,85 +154,94 @@
             // 
             this.txtId.Location = new System.Drawing.Point(166, 59);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(117, 20);
             this.txtId.TabIndex = 12;
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(166, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
-            this.textBox1.TabIndex = 13;
+            this.txtCodigo.Location = new System.Drawing.Point(166, 92);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(117, 20);
+            this.txtCodigo.TabIndex = 13;
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(166, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 20);
-            this.textBox2.TabIndex = 14;
+            this.txtNombre.Location = new System.Drawing.Point(166, 121);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(117, 20);
+            this.txtNombre.TabIndex = 14;
             // 
-            // textBox3
+            // txtDesc
             // 
-            this.textBox3.Location = new System.Drawing.Point(166, 150);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 20);
-            this.textBox3.TabIndex = 15;
+            this.txtDesc.Location = new System.Drawing.Point(166, 150);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.ReadOnly = true;
+            this.txtDesc.Size = new System.Drawing.Size(117, 20);
+            this.txtDesc.TabIndex = 15;
             // 
-            // textBox4
+            // txtIdMarca
             // 
-            this.textBox4.Location = new System.Drawing.Point(166, 181);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(117, 20);
-            this.textBox4.TabIndex = 16;
+            this.txtIdMarca.Location = new System.Drawing.Point(166, 181);
+            this.txtIdMarca.Name = "txtIdMarca";
+            this.txtIdMarca.ReadOnly = true;
+            this.txtIdMarca.Size = new System.Drawing.Size(117, 20);
+            this.txtIdMarca.TabIndex = 16;
             // 
-            // textBox5
+            // txtPrecio
             // 
-            this.textBox5.Location = new System.Drawing.Point(166, 314);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(117, 20);
-            this.textBox5.TabIndex = 17;
+            this.txtPrecio.Location = new System.Drawing.Point(166, 314);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.ReadOnly = true;
+            this.txtPrecio.Size = new System.Drawing.Size(117, 20);
+            this.txtPrecio.TabIndex = 17;
             // 
-            // textBox7
+            // txtIdCat
             // 
-            this.textBox7.Location = new System.Drawing.Point(166, 242);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(117, 20);
-            this.textBox7.TabIndex = 19;
+            this.txtIdCat.Location = new System.Drawing.Point(166, 242);
+            this.txtIdCat.Name = "txtIdCat";
+            this.txtIdCat.ReadOnly = true;
+            this.txtIdCat.Size = new System.Drawing.Size(117, 20);
+            this.txtIdCat.TabIndex = 19;
             // 
-            // textBox6
+            // txtDescMarca
             // 
-            this.textBox6.Location = new System.Drawing.Point(166, 209);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(117, 20);
-            this.textBox6.TabIndex = 20;
+            this.txtDescMarca.Location = new System.Drawing.Point(166, 209);
+            this.txtDescMarca.Name = "txtDescMarca";
+            this.txtDescMarca.ReadOnly = true;
+            this.txtDescMarca.Size = new System.Drawing.Size(117, 20);
+            this.txtDescMarca.TabIndex = 20;
             // 
-            // textBox8
+            // txtDescCat
             // 
-            this.textBox8.Location = new System.Drawing.Point(166, 278);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(117, 20);
-            this.textBox8.TabIndex = 21;
+            this.txtDescCat.Location = new System.Drawing.Point(166, 278);
+            this.txtDescCat.Name = "txtDescCat";
+            this.txtDescCat.ReadOnly = true;
+            this.txtDescCat.Size = new System.Drawing.Size(117, 20);
+            this.txtDescCat.TabIndex = 21;
             // 
             // FrmDetalleArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 377);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(577, 358);
+            this.Controls.Add(this.txtDescCat);
+            this.Controls.Add(this.txtDescMarca);
+            this.Controls.Add(this.txtIdCat);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtIdMarca);
+            this.Controls.Add(this.txtDesc);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblDescCat);
             this.Controls.Add(this.lblIdCat);
             this.Controls.Add(this.lblDescMarca);
             this.Controls.Add(this.lblIdMarca);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxDetalle);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblNombre);
@@ -241,7 +249,8 @@
             this.Controls.Add(this.lblTitulo);
             this.Name = "FrmDetalleArticulo";
             this.Text = "FrmDetalleArticulo";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmDetalleArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,20 +263,20 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblDesc;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxDetalle;
         private System.Windows.Forms.Label lblIdMarca;
         private System.Windows.Forms.Label lblDescMarca;
         private System.Windows.Forms.Label lblIdCat;
         private System.Windows.Forms.Label lblDescCat;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.TextBox txtIdMarca;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtIdCat;
+        private System.Windows.Forms.TextBox txtDescMarca;
+        private System.Windows.Forms.TextBox txtDescCat;
     }
 }

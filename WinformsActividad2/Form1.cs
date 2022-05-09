@@ -132,13 +132,18 @@ namespace WinformsActividad2
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado;
 
-            seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
+            DataGridViewRow row = dgvArticulos1.CurrentRow;
+            if (row != null)
+            {
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
 
-            FrmDetalleArticulo detalle = new FrmDetalleArticulo();
+                FrmDetalleArticulo detalle = new FrmDetalleArticulo(seleccionado);
+                detalle.ShowDialog();
 
-           detalle.ShowDialog();
+            }
+
 
         }
     }
