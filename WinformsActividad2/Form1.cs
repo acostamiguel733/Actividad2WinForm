@@ -129,6 +129,18 @@ namespace WinformsActividad2
             dgvArticulos1.DataSource = Listafiltrada;
             ocultarColumnas();
         }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+
+            seleccionado = (Articulo)dgvArticulos1.CurrentRow.DataBoundItem;
+
+            FrmDetalleArticulo detalle = new FrmDetalleArticulo();
+
+           detalle.ShowDialog();
+
+        }
     }
 
 }
